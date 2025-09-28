@@ -212,7 +212,7 @@ nav a:focus {
      .text-block {
           flex-direction: column;
           justify-content: center;
-          text-align: center;
+          transform: translateY(25%);          
           max-height: 235px;
           overflow: auto;
           margin: 0 auto;
