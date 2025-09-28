@@ -67,6 +67,8 @@ nav a:focus {
       
 .accounts, .onlinebanking, .security, .loans, .contact {
           grid-column: 2 / span 3;
+          grid-row: auto;              /* keep row assignment */
+          position: relative;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -111,6 +113,7 @@ nav a:focus {
      justify-content: center;   /* vertical centering */
      align-items: center;       /* horizontal centering */
      text-align: center;
+     overflow-y: auto;
      overflow: auto;            /* scrollable if content exceeds height */
  }
  
@@ -127,8 +130,8 @@ nav a:focus {
           grid-column: 2 / span 3;
           display: flex;
           flex-direction: column;
-          justify-content: center;     /* vertical centering */
-          align-items: center;         /* horizontal centering */
+          justify-content: center;
+          align-items: center;
           text-align: center;
      }
      .accounts-image img,
@@ -137,11 +140,19 @@ nav a:focus {
      .loans-image img,
      .contact-image img {
           display: flex;
-          width: 100%;          /* scale to container width */
-          height: auto;         /* maintain aspect ratio */
+          width: 100%;
+          height: auto;
      }
      .text-block { 
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
           overflow: auto; 
+          height:auto;
      }
 }
 
@@ -225,9 +236,10 @@ nav a:focus {
 
 .text-block {
      flex-direction: column;
-     justify-content: center;     /* vertical centering within text-block */
-     align-items: center;         /* horizontal centering of content */
-     text-align: center;          /* center the text inside */
+     justify-content: center;
+     transform: translateY(25%);
+     align-items: center;
+     text-align: center;
      max-height: 235px;           /* prevent block from filling entire grid row */
      overflow: auto;              /* allow scrolling if content exceeds max-height */
      margin: 0 auto;              /* center the text-block horizontally in the grid cell */
